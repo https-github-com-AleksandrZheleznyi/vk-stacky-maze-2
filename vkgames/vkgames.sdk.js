@@ -32,6 +32,7 @@ async function BridgeShowRewardVideoAd(request)
     try {
         var data = await vkBridge.send('VKWebAppShowNativeAds', { ad_format:'reward' });
         SendSuccessMessage(request);
+        SendClosedMessage(request);
     } catch (err) {
         SendFailedMessage(request, JSON.stringify(err));
         console.log('-Failed receive reward');

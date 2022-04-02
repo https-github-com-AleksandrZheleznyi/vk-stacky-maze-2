@@ -61,6 +61,12 @@ function SendFailedMessage(request, parameters)
     BaseSendMessage(request.gameObjectName, request.failedMethodName, parameters);
 }
 
+function SendClosedMessage(request)
+{
+    if(request == null) return;
+    BaseSendMessage(request.gameObjectName, request.closedMethodName);
+}
+
 
 function BaseSendMessage(gameObjectName, functionName, parameters)
 {
